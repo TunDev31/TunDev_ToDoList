@@ -102,7 +102,7 @@ const toggleTaskComplete = async () => {
             <p
               className={cn(
                 "text-base transition-all duration-200",
-                task.status === "complete"
+                task.status === "completed"
                   ? "line-through text-muted-foreground"
                   : "text-foreground"
               )}
