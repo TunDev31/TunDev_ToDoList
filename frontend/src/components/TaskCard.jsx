@@ -57,7 +57,7 @@ const toggleTaskComplete = async () => {
     <Card
       className={cn(
         "p-4 bg-gradient-card border-0 shadow-custom-md hover:shadow-custom-lg transition-all duration-200 animate-fade-in group",
-        task.status === "complete" && "opacity-75"
+        task.status === "completed" && "opacity-75"
       )}
       style={{ animationDelay: `${index * 50}ms` }}
     >
@@ -68,13 +68,13 @@ const toggleTaskComplete = async () => {
           size="icon"
           className={cn(
             "shrink-0 size-8 rounded-full transition-all duration-200",
-            task.status === "complete"
+            task.status === "completed"
               ? "text-success hover:text-success/80"
               : "text-muted-foreground hover:text-primary"
           )}
           onClick={toggleTaskComplete}
         >
-          {task.status === "complete" ? (
+          {task.status === "completed" ? (
             <CheckCircle2 className="size-5" />
           ) : (
             <Circle className="size-5" />
