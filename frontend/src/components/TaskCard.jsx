@@ -43,11 +43,11 @@ const toggleTaskComplete = async () => {
   try {
     await api.put(`/tasks/${task._id}`, {
       title: task.title,
-      status: task.status === "active" ? "complete" : "active",
+      status: task.status === "active" ? "completed" : "active",
       completeAt: task.status === "active" ? new Date() : null,
     });
     handleTaskChanged();
-    toast.success(`Task marked as ${task.status === "active" ? "complete" : "active"}!`);
+    toast.success(`Task marked as ${task.status === "active" ? "completed" : "active"}!`);
   } catch (error) {
     console.error("Error updating task:", error);
     toast.error("Failed to update task. Please try again later.");
@@ -57,7 +57,7 @@ const toggleTaskComplete = async () => {
     <Card
       className={cn(
         "p-4 bg-gradient-card border-0 shadow-custom-md hover:shadow-custom-lg transition-all duration-200 animate-fade-in group",
-        task.status === "complete" && "opacity-75"
+        task.status === "completed" && "opacity-75"
       )}
       style={{ animationDelay: `${index * 50}ms` }}
     >
